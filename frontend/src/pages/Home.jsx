@@ -17,8 +17,7 @@ const Home = () => {
       const updated = {};
       for (const city of cities) {
         try {
-          const res = await fetch(`${process.env.VITE_BACKEND_URL}/weather?city=${city}`);
-          alert(VITE_BACKEND_URL)
+          const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/weather?city=${city}`);
           const data = await res.json();
           updated[city] = {
             temp: data.temperature,
