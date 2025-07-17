@@ -17,7 +17,8 @@ const Home = () => {
       const updated = {};
       for (const city of cities) {
         try {
-          const res = await fetch(`http://localhost:5000/api/weather?city=${city}`);
+          const res = await fetch(`${process.env.VITE_BACKEND_URL}/weather?city=${city}`);
+          alert(VITE_BACKEND_URL)
           const data = await res.json();
           updated[city] = {
             temp: data.temperature,
