@@ -21,7 +21,7 @@ const CurrentLocation = () => {
     const fetchWeather = async() => {
       setError(null);
       try {
-        const res = await fetch(`http://localhost:5000/api/weather?city=${place}`);
+        const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/weather?city=${place}`);
         if (!res.ok) {
           const msg = await res.text();
           throw new Error(`Location not found: ${msg}`);
