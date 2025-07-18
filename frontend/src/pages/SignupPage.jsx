@@ -42,7 +42,7 @@ const SignupPage = () => {
 
     const handleSendOtp = async () => {
         try {
-            const resp = await axiosInstance.post("/auth/send-otp", {
+            const resp = await axiosInstance.post("/v1/auth/send-otp", {
                 email,
             });
             if (resp.data.isSuccess) {
