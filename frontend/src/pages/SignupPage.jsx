@@ -24,7 +24,7 @@ const SignupPage = () => {
                     otp,
                 };
 
-                const result = await axiosInstance.post("/auth/signup", dataObj);
+                const result = await axiosInstance.post("/v1/auth/signup", dataObj);
 
                 if (result.status === 201) {
                     SuccessToast(result.data.message);

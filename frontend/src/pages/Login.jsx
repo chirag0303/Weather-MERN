@@ -31,7 +31,7 @@ const Login = () => {
   const submitHandler = async (event) => {
     event.preventDefault();
     console.log('LOGIN FORM DATA:', formState.inputs);
-    const result = await axiosInstance.post('/auth/login', {
+    const result = await axiosInstance.post('/v1/auth/login', {
       email: formState.inputs.email.value,
       password: formState.inputs.password.value
     });
